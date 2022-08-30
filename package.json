@@ -1,0 +1,35 @@
+{
+  "name": "tree-sitter-cool",
+  "version": "1.0.0",
+  "description": "Tree-sitter grammar for COOL",
+  "main": "bindings/node",
+  "author": "Ben Siraphob",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.15.0",
+    "node-gyp": "^8.4.1"
+  },
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp build",
+    "test": "tree-sitter test",
+    "install": "node-gyp rebuild",
+    "generate": "tree-sitter generate",
+    "parse": "tree-sitter parse",
+    "build-wasm": "tree-sitter build-wasm",
+    "playground": "tree-sitter playground"
+  },
+  "tree-sitter": [
+    {
+      "file-types": [
+        "cl"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "scope": "source.cl"
+    }
+  ],
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.4"
+  }
+}
