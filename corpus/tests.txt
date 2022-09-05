@@ -89,3 +89,37 @@ class Main {
                 (expression
                   (expression
                     (int)))))))))))
+
+================================================================================
+method call
+================================================================================
+
+
+class List {
+  cons(s : String) : List {
+    (new Cons).init(s, self)
+  };
+};
+
+--------------------------------------------------------------------------------
+
+(program
+  (classDefine
+    (type)
+    (feature
+      (method
+        (id)
+        (formal
+          (id)
+          (type))
+        (type)
+        (expression
+          (dispatch
+            (expression
+              (expression
+                (type)))
+            (id)
+            (expression
+              (id))
+            (expression
+              (id))))))))

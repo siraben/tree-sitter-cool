@@ -24,9 +24,9 @@ module.exports = grammar({
     id: $ => /[a-z][_0-9A-Za-z]*/,
     type: $ => /[A-Z][_0-9A-Za-z]*/,
     expression: $ => prec.right(2,choice(
-      seq($.expression,optional(seq('@',$.type)),$.id,'(',commaSep($.expression),')'),
+      $.dispatch,
       seq($.id,'(',commaSep($.expression),')'),
-      seq('if',$.expression,'then',$.expression,'else',$.expression,'fi'),
+      $.if,
       seq('while',$.expression,'loop',$.expression,'pool'),
       seq('{',repeat1(seq($.expression,';')),'}'),
       seq('case',$.expression,'of',repeat1(seq('formal','=>',$.expression,'l')),'esac'),
@@ -45,6 +45,8 @@ module.exports = grammar({
       seq($.id,ASGN,$.expression),
       seq('let',commaSep($.property),'in',$.expression),
     )),
+    dispatch: $ => seq($.expression,optional(seq('@',$.type)),'.',$.id,'(',commaSep($.expression),')'),
+    if: $ => seq('if',$.expression,'then',$.expression,'else',$.expression,'fi'),
     int: $ => /[0-9]+/,
     string: $ => seq('"', /(?:[^"\\]|\\.)*/, '"'),
     comment: $ => token(choice(
