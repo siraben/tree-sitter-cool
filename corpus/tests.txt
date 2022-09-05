@@ -47,9 +47,10 @@ class Main inherits IO {
         (id)
         (type)
         (expression
-          (id)
-          (expression
-            (string)))))))
+          (functionCall
+            (id)
+            (expression
+              (string))))))))
 
 ================================================================================
 sequential assign
