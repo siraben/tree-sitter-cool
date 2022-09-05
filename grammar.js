@@ -17,8 +17,7 @@ module.exports = grammar({
                           repeat(seq($.feature,';')),
                           '}'),
     feature: $ => choice($.method,$.property),
-    // method	 : ID '(' (formal (',' formal)*)* ')' ':' TYPE '{' expression '}'
-    method: $ => seq($.id,'(',commaSep($.formal),')',':',$.type,'{',$.expression,'}'),
+    method: $ => seq(field('name',$.id),'(',commaSep($.formal),')',':',$.type,'{',$.expression,'}'),
     property: $ => seq($.formal,optional(seq(ASGN,$.expression))),
     formal: $ => seq($.id,':',$.type),
     id: $ => /[a-z][_0-9A-Za-z]*/,

@@ -177,7 +177,18 @@
   {
     "type": "method",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "id",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -188,10 +199,6 @@
         },
         {
           "type": "formal",
-          "named": true
-        },
-        {
-          "type": "id",
           "named": true
         },
         {
