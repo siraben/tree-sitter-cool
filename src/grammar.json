@@ -1,5 +1,6 @@
 {
   "name": "cool",
+  "word": "id",
   "rules": {
     "program": {
       "type": "CHOICE",

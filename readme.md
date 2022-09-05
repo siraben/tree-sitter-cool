@@ -2,6 +2,9 @@
 Cool grammar for
 [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 
+
+<img src="example.png" alt="Syntax highlighting" align="center">
+
 ## Building
 ```ShellSession
 $ npm run build && tree-sitter test

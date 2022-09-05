@@ -6,9 +6,7 @@ module.exports = grammar({
     /\s/,
     $.comment,
   ],
-  conflicts: $ => [
-    // [$.method, $.property],
-  ],
+  word: $ => $.id,
   rules: {
     program: $ => choice(
       repeat(seq($.classDefine,';')),
