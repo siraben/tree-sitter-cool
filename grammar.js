@@ -26,7 +26,7 @@ module.exports = grammar({
       $.if,
       seq('while',$.expression,'loop',$.expression,'pool'),
       seq('{',repeat1(seq($.expression,';')),'}'),
-      seq('case',$.expression,'of',repeat1(seq('formal','=>',$.expression,'l')),'esac'),
+      seq('case',$.expression,'of',repeat1(seq($.formal,'=>',$.expression,';')),'esac'),
       seq('new',$.type),
       seq('~',$.expression),
       seq('isvoid',$.expression),

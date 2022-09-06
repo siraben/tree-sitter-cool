@@ -316,8 +316,8 @@
                   "type": "SEQ",
                   "members": [
                     {
-                      "type": "STRING",
-                      "value": "formal"
+                      "type": "SYMBOL",
+                      "name": "formal"
                     },
                     {
                       "type": "STRING",
@@ -329,7 +329,7 @@
                     },
                     {
                       "type": "STRING",
-                      "value": "l"
+                      "value": ";"
                     }
                   ]
                 }

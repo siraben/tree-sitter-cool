@@ -124,3 +124,63 @@ class List {
               (id))
             (expression
               (id))))))))
+
+================================================================================
+case
+================================================================================
+
+class Main inherits IO {
+  eval(t : Exp) : String {
+    case t of
+      t : Lit => t.eval();
+      t : Add => eval(t.l()).concat(eval(t.r()));
+    esac
+  };
+};
+
+--------------------------------------------------------------------------------
+
+(program
+  (classDefine
+    (type)
+    (type)
+    (feature
+      (method
+        (id)
+        (formal
+          (id)
+          (type))
+        (type)
+        (expression
+          (expression
+            (id))
+          (formal
+            (id)
+            (type))
+          (expression
+            (dispatch
+              (expression
+                (id))
+              (id)))
+          (formal
+            (id)
+            (type))
+          (expression
+            (dispatch
+              (expression
+                (functionCall
+                  (id)
+                  (expression
+                    (dispatch
+                      (expression
+                        (id))
+                      (id)))))
+              (id)
+              (expression
+                (functionCall
+                  (id)
+                  (expression
+                    (dispatch
+                      (expression
+                        (id))
+                      (id))))))))))))
