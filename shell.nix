@@ -2,6 +2,10 @@
 , pkgs ? import sources.nixpkgs { }}:
 with pkgs;
 
+let
+  emscripten = (import sources.emscripten-old { }).emscripten;
+in
+
 mkShell {
   packages = [ tree-sitter emscripten ];
 }
