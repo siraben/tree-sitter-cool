@@ -46,10 +46,10 @@ class Main inherits IO {
       (method
         (id)
         (type)
-        (expression
+        (expr
           (functionCall
             (id)
-            (expression
+            (expr
               (string))))))))
 
 ================================================================================
@@ -81,14 +81,14 @@ class Main {
       (method
         (id)
         (type)
-        (expression
-          (expression
+        (expr
+          (expr
             (id)
-            (expression
+            (expr
               (id)
-              (expression
-                (expression
-                  (expression
+              (expr
+                (expr
+                  (expr
                     (int)))))))))))
 
 ================================================================================
@@ -114,15 +114,15 @@ class List {
           (id)
           (type))
         (type)
-        (expression
+        (expr
           (dispatch
-            (expression
-              (expression
+            (expr
+              (expr
                 (type)))
             (id)
-            (expression
+            (expr
               (id))
-            (expression
+            (expr
               (id))))))))
 
 ================================================================================
@@ -151,36 +151,64 @@ class Main inherits IO {
           (id)
           (type))
         (type)
-        (expression
-          (expression
+        (expr
+          (expr
             (id))
           (formal
             (id)
             (type))
-          (expression
+          (expr
             (dispatch
-              (expression
+              (expr
                 (id))
               (id)))
           (formal
             (id)
             (type))
-          (expression
+          (expr
             (dispatch
-              (expression
+              (expr
                 (functionCall
                   (id)
-                  (expression
+                  (expr
                     (dispatch
-                      (expression
+                      (expr
                         (id))
                       (id)))))
               (id)
-              (expression
+              (expr
                 (functionCall
                   (id)
-                  (expression
+                  (expr
                     (dispatch
-                      (expression
+                      (expr
                         (id))
                       (id))))))))))))
+
+================================================================================
+precedence
+================================================================================
+
+class Main {
+  main() : Object {
+    1 * 2 + 3
+  };
+};
+
+--------------------------------------------------------------------------------
+
+(program
+  (classDefine
+    (type)
+    (feature
+      (method
+        (id)
+        (type)
+        (expr
+          (expr
+            (expr
+              (int))
+            (expr
+              (int)))
+          (expr
+            (int)))))))

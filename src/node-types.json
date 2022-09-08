@@ -38,7 +38,7 @@
       "required": true,
       "types": [
         {
-          "type": "expression",
+          "type": "expr",
           "named": true
         },
         {
@@ -49,9 +49,30 @@
     }
   },
   {
-    "type": "expression",
+    "type": "expr",
     "named": true,
-    "fields": {},
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expr",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expr",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -61,7 +82,7 @@
           "named": true
         },
         {
-          "type": "expression",
+          "type": "expr",
           "named": true
         },
         {
@@ -157,7 +178,7 @@
       "required": false,
       "types": [
         {
-          "type": "expression",
+          "type": "expr",
           "named": true
         }
       ]
@@ -166,16 +187,37 @@
   {
     "type": "if",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
-        }
-      ]
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expr",
+            "named": true
+          }
+        ]
+      },
+      "else": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expr",
+            "named": true
+          }
+        ]
+      },
+      "then": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expr",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -198,7 +240,7 @@
       "required": true,
       "types": [
         {
-          "type": "expression",
+          "type": "expr",
           "named": true
         },
         {
@@ -236,7 +278,7 @@
       "required": true,
       "types": [
         {
-          "type": "expression",
+          "type": "expr",
           "named": true
         },
         {
